@@ -18,7 +18,7 @@ type DBConfig struct {
 	Port     string
 	Username string
 	Password string
-	database string
+	Database string
 }
 
 func init() {
@@ -48,7 +48,7 @@ func Load() error {
 		Port:     viper.GetString("database.port"),
 		Username: viper.GetString("database.username"),
 		Password: viper.GetString("database.password"),
-		database: viper.GetString("database.name"),
+		Database: viper.GetString("database.name"),
 	}
 	return nil
 }
