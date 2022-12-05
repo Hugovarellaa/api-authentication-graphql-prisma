@@ -9,7 +9,7 @@ import (
 	"github.com/Hugovarellaa/curd-go/models"
 )
 
-func GetAll(w http.ResponseWriter, r *http.Request) {
+func Get(w http.ResponseWriter, r *http.Request) {
 	id, err := strconv.Atoi(chi.URLParams(r, "id"))
 	if err != nil {
 		log.Printf("Error ao fazer parse do id: %v", err)
