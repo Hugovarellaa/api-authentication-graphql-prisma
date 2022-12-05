@@ -7,10 +7,11 @@ import (
 	"strconv"
 
 	"github.com/Hugovarellaa/curd-go/models"
+	"github.com/go-chi/chi/v5"
 )
 
 func Delete(w http.ResponseWriter, r *http.Request) {
-	id, err := strconv.Atoi(chi.URLParams(r, "id"))
+	id, err := strconv.Atoi(chi.URLParam(r, "id"))
 	if err != nil {
 		log.Printf("Error ao fazer parse do id: %v", err)
 		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)

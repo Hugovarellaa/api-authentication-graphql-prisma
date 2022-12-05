@@ -9,7 +9,7 @@ import (
 	"github.com/Hugovarellaa/curd-go/models"
 )
 
-func Create(w http.ResponseWriter, r http.Request) {
+func Create(w http.ResponseWriter, r *http.Request) {
 	var todo models.Todo
 
 	err := json.NewDecoder(r.Body).Decode(&todo)
