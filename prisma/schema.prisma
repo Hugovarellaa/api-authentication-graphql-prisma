@@ -17,14 +17,16 @@ model Courses {
   duration    Int
   created_at  DateTime @default(now())
 
+  teacher     Tearchers @relation(fields: [tearchersId], references: [id])
+  tearchersId String
+
   @@map("courses")
 }
 
-model Modules {
-  id          String   @id @default(uuid())
-  name        String   @unique
-  description String
-  created_at  DateTime @default(now())
+model Tearchers {
+  id      String    @id @default(uuid())
+  name    String    @unique
+  Courses Courses[]
 
-  @@map("modules")
+  @@map("teachers")
 }
