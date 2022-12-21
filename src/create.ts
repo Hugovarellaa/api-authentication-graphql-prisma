@@ -2,6 +2,8 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
+// Cadastrar na tabela
+
 async function createCourse() {
   const result = await prisma.courses.create({
     data: {
